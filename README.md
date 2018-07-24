@@ -34,14 +34,14 @@ II. ĐỊNH DẠNG THẺ NHỚ
 23. Chạy các lệnh trong tệp Commands 
 Với E là Windows; D là ổ BOOT; 
 Chạy lệnh 
-  cd C:\WoRP 
-  dism /Mount-image /imagefile:install.wim /Index:1 /MountDir:m
-  dism /image:m /add-driver /driver:system32 /recurse /forceunsigned
-  dism /unmount-wim /mountdir:m /commit
-  dism /apply-image /imagefile:install.wim /index:1 /applydir:E:\
-  bcdboot E:\Windows /s D: /f UEFI
-  bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} testsigning on
-  bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} nointegritychecks on
+ - cd C:\WoRP 
+ - dism /Mount-image /imagefile:install.wim /Index:1 /MountDir:m
+ - dism /image:m /add-driver /driver:system32 /recurse /forceunsigned
+ - dism /unmount-wim /mountdir:m /commit
+ - dism /apply-image /imagefile:install.wim /index:1 /applydir:E:\
+ - bcdboot E:\Windows /s D: /f UEFI
+ - bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} testsigning on
+ - bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} nointegritychecks on
 24. Đẩy thẻ SD ra. 
 25. Lắp thẻ SD vào Raspberry Pi của bạn.
 26. Bật Raspberry Pi 3. Có thể mất vài phút (hoặc lâu hơn) để khởi động. 
