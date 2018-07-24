@@ -15,11 +15,11 @@ II. ĐỊNH DẠNG THẺ NHỚ
 9. Chọn định dạng là NTFS. 
 10. Nhấp vào OK. 
 11. Nhấp vào Áp dụng. 
-12. Truy cập https://uup.rg-adguard.net/  
-- Tải về các phiên bản có [arm64]  
-- Chọn ngôn ngữ; 
-- Chọn Windows 10 Professional; 
-- Chọn Download ISO compiler trong OneClick! (unZIP -> RUN createISO.cmd) và tải xuống tệp. 
+12. Truy cập https://uup.rg-adguard.net/
+  - Tải về các phiên bản có [arm64]
+  - Chọn ngôn ngữ;
+  - Chọn Windows 10 Professional;
+  - Chọn Download ISO compiler trong OneClick! (unZIP -> RUN createISO.cmd) và tải xuống tệp.
 13. Giải nén tập tin WoRP (link phía dưới video) sau đó copy vào ổ C 
 14 Vào thư mục C:\WoRP\UEFI. 
 15. Sao chép tất cả các tập tin trong thư mục UEFI và dán nó vào ổ BOOT của thẻ SD. 
@@ -34,14 +34,14 @@ II. ĐỊNH DẠNG THẺ NHỚ
 23. Chạy các lệnh trong tệp Commands 
 Với E là Windows; D là ổ BOOT; 
 Chạy lệnh 
-cd C:\WoRP 
-dism /Mount-image /imagefile:install.wim /Index:1 /MountDir:m 
-dism /image:m /add-driver /driver:system32 /recurse /forceunsigned 
-dism /unmount-wim /mountdir:m /commit 
-dism /apply-image /imagefile:install.wim /index:1 /applydir:E:\ 
-bcdboot E:\Windows /s D: /f UEFI
-bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} testsigning on 
-bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} nointegritychecks on 
+  cd C:\WoRP 
+  dism /Mount-image /imagefile:install.wim /Index:1 /MountDir:m
+  dism /image:m /add-driver /driver:system32 /recurse /forceunsigned
+  dism /unmount-wim /mountdir:m /commit
+  dism /apply-image /imagefile:install.wim /index:1 /applydir:E:\
+  bcdboot E:\Windows /s D: /f UEFI
+  bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} testsigning on
+  bcdedit /store D:\EFI\Microsoft\Boot\bcd /set {default} nointegritychecks on
 24. Đẩy thẻ SD ra. 
 25. Lắp thẻ SD vào Raspberry Pi của bạn.
 26. Bật Raspberry Pi 3. Có thể mất vài phút (hoặc lâu hơn) để khởi động. 
